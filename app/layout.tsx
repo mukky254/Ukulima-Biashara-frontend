@@ -5,11 +5,15 @@ import { AuthProvider } from '@/contexts/AuthContext';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Ukulima Biashara - Connect Farmers to Markets',
   description: 'Agricultural marketplace connecting farmers, wholesalers, and retailers in Kenya',
+  keywords: 'farmers, agriculture, Kenya, marketplace, wholesalers, retailers, fresh produce',
 };
 
 export default function RootLayout({
@@ -18,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.className}>
+      <body className="bg-gray-50 text-gray-900 antialiased">
         <AuthProvider>
           <div className="min-h-screen flex flex-col">
             <Header />
