@@ -9,10 +9,11 @@ const nextConfig = {
   env: {
     API_URL: process.env.API_URL,
   },
-  // Add this to disable SSG for dynamic pages
-  output: 'standalone',
-  // Disable static generation for auth-dependent pages
+  // Add these lines to fix the build
   trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  output: 'export',
+  distDir: 'out',
 }
 
 module.exports = nextConfig
