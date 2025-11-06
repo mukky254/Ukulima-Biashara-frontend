@@ -8,7 +8,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import LoadingSpinner from '@/components/common/LoadingSpinner';
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const params = useParams();
+  const id = params.id as string;
   const router = useRouter();
   const { user } = useAuth();
   const [product, setProduct] = useState<Product | null>(null);
@@ -24,7 +25,7 @@ export default function ProductDetail() {
 
   const loadProduct = async () => {
     try {
-      const response = await productsAPI.getProduct(id as string);
+      const response = await productsAPI.getProduct(id);
       setProduct(response.data);
       setOrderQuantity(response.data.minOrder);
     } catch (error) {
@@ -69,7 +70,11 @@ export default function ProductDetail() {
   };
 
   if (loading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   if (!product) {
