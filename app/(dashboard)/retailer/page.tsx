@@ -2,6 +2,9 @@
 
 import RetailerDashboard from '@/components/dashboard/RetailerDashboard';
 
+// Disable static generation
+export const dynamic = 'force-dynamic';
+
 export default function RetailerDashboardPage() {
   return (
     <div>
