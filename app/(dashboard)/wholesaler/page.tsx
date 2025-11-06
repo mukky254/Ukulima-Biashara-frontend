@@ -1,11 +1,20 @@
 'use client';
 
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import WholesalerDashboard from '@/components/dashboard/WholesalerDashboard';
 
-// Disable static generation
-export const dynamic = 'force-dynamic';
-
 export default function WholesalerDashboardPage() {
+  const router = useRouter();
+  
+  useEffect(() => {
+    // Client-side only check
+    const token = localStorage.getItem('token');
+    if (!token) {
+      router.push('/login');
+    }
+  }, [router]);
+
   return (
     <div>
       <div className="mb-8">
