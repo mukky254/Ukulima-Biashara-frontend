@@ -2,6 +2,9 @@
 
 import FarmerDashboard from '@/components/dashboard/FarmerDashboard';
 
+// Disable static generation
+export const dynamic = 'force-dynamic';
+
 export default function FarmerDashboardPage() {
   return (
     <div>
