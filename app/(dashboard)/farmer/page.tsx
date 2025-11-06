@@ -1,11 +1,20 @@
 'use client';
 
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import FarmerDashboard from '@/components/dashboard/FarmerDashboard';
 
-// Disable static generation
-export const dynamic = 'force-dynamic';
-
 export default function FarmerDashboardPage() {
+  const router = useRouter();
+  
+  useEffect(() => {
+    // Client-side only check
+    const token = localStorage.getItem('token');
+    if (!token) {
+      router.push('/login');
+    }
+  }, [router]);
+
   return (
     <div>
       <div className="mb-8">
