@@ -2,6 +2,9 @@
 
 import WholesalerDashboard from '@/components/dashboard/WholesalerDashboard';
 
+// Disable static generation
+export const dynamic = 'force-dynamic';
+
 export default function WholesalerDashboardPage() {
   return (
     <div>
