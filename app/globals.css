@@ -1085,4 +1085,1511 @@ a:focus-visible {
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== FINAL OVERRIDES ===== */
+@media (max-width: 640px) {
+  .mobile\:stack {
+    flex-direction: column;
+  }
+  
+  .mobile\:text-center {
+    text-align: center;
+  }
+  
+  .mobile\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop\:flex-row {
+    flex-direction: row;
+  }
+  
+  .desktop\:text-left {
+    text-align: left;
+  }
+}
+
+/* ===== PRINT OPTIMIZATIONS ===== */
+@media print {
+  * {
+    print-color-adjust: exact;
+  }
+  
+  .break-before {
+    page-break-before: always;
+  }
+  
+  .break-inside-avoid {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border-width: 2px;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  .touch\:text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .touch\:min-h-12 {
+    min-height: 3rem;
+  }
+}
+
+/* ===== DARK THEME VARIABLES ===== */
+[data-theme="dark"] {
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+}
+
+/* ===== CUSTOM PROPERTY FALLBACKS ===== */
+@supports not (display: grid) {
+  .fallback-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== FINAL ACCESSIBILITY ===== */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ===== FOCUS VISIBLE POLYFILL ===== */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== SELECTION STYLES ===== */
+::selection {
+  background-color: rgba(34, 197, 94, 0.3);
+}
+
+::-moz-selection {
+  background-color: rgba(34, 197, 94, 0.3);
+}
+
+/* ===== PLACEHOLDER STYLING ===== */
+::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #9ca3af;
+}
+
+::-ms-input-placeholder {
+  color: #9ca3af;
+}
+
+/* ===== AUTOFILL STYLING ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1f2937;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ===== FIREFOX SCROLLBAR ===== */
+@-moz-document url-prefix() {
+  .scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-500) transparent;
+  }
+}
+
+/* ===== EDGE/IE FALLBACKS ===== */
+@supports (-ms-ime-align: auto) {
+  .input {
+    padding: 0.75rem;
+  }
+}
+
+/* ===== SAFARI SPECIFIC ===== */
+_::-webkit-full-page-media, _:future, :root .safari-only {
+  property: value;
+}
+
+/* ===== FINAL CLEANUP ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== CUSTOM CURSORS ===== */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+/* ===== TEXT STROKE ===== */
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  paint-order: stroke fill;
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke: 2px currentColor;
+  paint-order: stroke fill;
+}
+
+/* ===== BLEND MODES ===== */
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.blend-screen {
+  mix-blend-mode: screen;
+}
+
+.blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.blend-darken {
+  mix-blend-mode: darken;
+}
+
+.blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.blend-color-burn {
+  mix-blend-mode: color-burn;
+}
+
+.blend-hard-light {
+  mix-blend-mode: hard-light;
+}
+
+.blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+.blend-difference {
+  mix-blend-mode: difference;
+}
+
+.blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.blend-hue {
+  mix-blend-mode: hue;
+}
+
+.blend-saturation {
+  mix-blend-mode: saturation;
+}
+
+.blend-color {
+  mix-blend-mode: color;
+}
+
+.blend-luminosity {
+  mix-blend-mode: luminosity;
+}
+
+/* ===== ISOLATION ===== */
+.isolate {
+  isolation: isolate;
+}
+
+.isolation-auto {
+  isolation: auto;
+}
+
+/* ===== BACKGROUND BLEND MODES ===== */
+.bg-blend-multiply {
+  background-blend-mode: multiply;
+}
+
+.bg-blend-screen {
+  background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+  background-blend-mode: overlay;
+}
+
+.bg-blend-darken {
+  background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+  background-blend-mode: lighten;
+}
+
+.bg-blend-color-dodge {
+  background-blend-mode: color-dodge;
+}
+
+.bg-blend-color-burn {
+  background-blend-mode: color-burn;
+}
+
+.bg-blend-hard-light {
+  background-blend-mode: hard-light;
+}
+
+.bg-blend-soft-light {
+  background-blend-mode: soft-light;
+}
+
+.bg-blend-difference {
+  background-blend-mode: difference;
+}
+
+.bg-blend-exclusion {
+  background-blend-mode: exclusion;
+}
+
+.bg-blend-hue {
+  background-blend-mode: hue;
+}
+
+.bg-blend-saturation {
+  background-blend-mode: saturation;
+}
+
+.bg-blend-color {
+  background-blend-mode: color;
+}
+
+.bg-blend-luminosity {
+  background-blend-mode: luminosity;
+}
+
+/* ===== MASK ===== */
+.mask-circle {
+  mask-type: alpha;
+  mask-mode: alpha;
+  -webkit-mask-image: radial-gradient(circle, white 100%, black 100%);
+  mask-image: radial-gradient(circle, white 100%, black 100%);
+}
+
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* ===== CLIP PATH ===== */
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.clip-polygon {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* ===== SHAPE OUTSIDE ===== */
+.shape-circle {
+  shape-outside: circle(50%);
+}
+
+.shape-polygon {
+  shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.shape-triangle {
+  shape-outside: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* ===== FLOAT CLEAR ===== */
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.clear-none {
+  clear: none;
+}
+
+/* ===== COLUMN LAYOUT ===== */
+.columns-1 {
+  columns: 1;
+}
+
+.columns-2 {
+  columns: 2;
+}
+
+.columns-3 {
+  columns: 3;
+}
+
+.column-gap-4 {
+  column-gap: 1rem;
+}
+
+.column-gap-8 {
+  column-gap: 2rem;
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+/* ===== WIDOWS AND ORPHANS ===== */
+.widows-2 {
+  widows: 2;
+}
+
+.orphans-2 {
+  orphans: 2;
+}
+
+/* ===== TEXT ORIENTATION ===== */
+.text-orientation-mixed {
+  text-orientation: mixed;
+}
+
+.text-orientation-upright {
+  text-orientation: upright;
+}
+
+.text-orientation-sideways {
+  text-orientation: sideways;
+}
+
+/* ===== WRITING MODE ===== */
+.writing-mode-horizontal {
+  writing-mode: horizontal-tb;
+}
+
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+}
+
+.writing-mode-vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+/* ===== TEXT COMBINE ===== */
+.text-combine-upright {
+  text-combine-upright: all;
+}
+
+/* ===== TEXT EMPHASIS ===== */
+.text-emphasis-filled {
+  -webkit-text-emphasis: filled;
+  text-emphasis: filled;
+}
+
+.text-emphasis-open {
+  -webkit-text-emphasis: open;
+  text-emphasis: open;
+}
+
+.text-emphasis-dot {
+  -webkit-text-emphasis: dot;
+  text-emphasis: dot;
+}
+
+.text-emphasis-circle {
+  -webkit-text-emphasis: circle;
+  text-emphasis: circle;
+}
+
+.text-emphasis-double-circle {
+  -webkit-text-emphasis: double-circle;
+  text-emphasis: double-circle;
+}
+
+.text-emphasis-triangle {
+  -webkit-text-emphasis: triangle;
+  text-emphasis: triangle;
+}
+
+.text-emphasis-sesame {
+  -webkit-text-emphasis: sesame;
+  text-emphasis: sesame;
+}
+
+/* ===== TEXT EMPHASIS POSITION ===== */
+.text-emphasis-position-over {
+  -webkit-text-emphasis-position: over;
+  text-emphasis-position: over;
+}
+
+.text-emphasis-position-under {
+  -webkit-text-emphasis-position: under;
+  text-emphasis-position: under;
+}
+
+/* ===== TEXT DECORATION ===== */
+.text-decoration-skip-ink {
+  text-decoration-skip-ink: auto;
+}
+
+.text-decoration-skip-none {
+  text-decoration-skip-ink: none;
+}
+
+/* ===== TEXT SPACING ===== */
+.text-spacing-tight {
+  text-spacing: tight;
+}
+
+.text-spacing-loose {
+  text-spacing: loose;
+}
+
+/* ===== TEXT JUSTIFY ===== */
+.text-justify {
+  text-align: justify;
+}
+
+.text-justify-all {
+  text-align: justify-all;
+}
+
+/* ===== HYPHENS ===== */
+.hyphens-none {
+  hyphens: none;
+}
+
+.hyphens-manual {
+  hyphens: manual;
+}
+
+.hyphens-auto {
+  hyphens: auto;
+}
+
+/* ===== LINE BREAK ===== */
+.line-break-auto {
+  line-break: auto;
+}
+
+.line-break-loose {
+  line-break: loose;
+}
+
+.line-break-normal {
+  line-break: normal;
+}
+
+.line-break-strict {
+  line-break: strict;
+}
+
+.line-break-anywhere {
+  line-break: anywhere;
+}
+
+/* ===== WORD BREAK ===== */
+.word-break-normal {
+  word-break: normal;
+}
+
+.word-break-break-all {
+  word-break: break-all;
+}
+
+.word-break-keep-all {
+  word-break: keep-all;
+}
+
+.word-break-break-word {
+  word-break: break-word;
+}
+
+/* ===== OVERFLOW WRAP ===== */
+.overflow-wrap-normal {
+  overflow-wrap: normal;
+}
+
+.overflow-wrap-break-word {
+  overflow-wrap: break-word;
+}
+
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+/* ===== WHITE SPACE ===== */
+.white-space-normal {
+  white-space: normal;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+.white-space-pre {
+  white-space: pre;
+}
+
+.white-space-pre-line {
+  white-space: pre-line;
+}
+
+.white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.white-space-break-spaces {
+  white-space: break-spaces;
+}
+
+/* ===== TAB SIZE ===== */
+.tab-size-1 {
+  tab-size: 1;
+}
+
+.tab-size-2 {
+  tab-size: 2;
+}
+
+.tab-size-4 {
+  tab-size: 4;
+}
+
+.tab-size-8 {
+  tab-size: 8;
+}
+
+/* ===== FONT FEATURE SETTINGS ===== */
+.font-feature-normal {
+  font-feature-settings: normal;
+}
+
+.font-feature-smcp {
+  font-feature-settings: "smcp";
+}
+
+.font-feature-c2sc {
+  font-feature-settings: "c2sc";
+}
+
+.font-feature-liga {
+  font-feature-settings: "liga";
+}
+
+.font-feature-dlig {
+  font-feature-settings: "dlig";
+}
+
+.font-feature-zero {
+  font-feature-settings: "zero";
+}
+
+.font-feature-tnum {
+  font-feature-settings: "tnum";
+}
+
+.font-feature-onum {
+  font-feature-settings: "onum";
+}
+
+.font-feature-frac {
+  font-feature-settings: "frac";
+}
+
+.font-feature-ordn {
+  font-feature-settings: "ordn";
+}
+
+.font-feature-pnum {
+  font-feature-settings: "pnum";
+}
+
+.font-feature-sinf {
+  font-feature-settings: "sinf";
+}
+
+.font-feature-subs {
+  font-feature-settings: "subs";
+}
+
+.font-feature-sups {
+  font-feature-settings: "sups";
+}
+
+.font-feature-calt {
+  font-feature-settings: "calt";
+}
+
+.font-feature-swsh {
+  font-feature-settings: "swsh";
+}
+
+.font-feature-cswh {
+  font-feature-settings: "cswh";
+}
+
+.font-feature-kern {
+  font-feature-settings: "kern";
+}
+
+/* ===== FONT VARIATION SETTINGS ===== */
+.font-variation-normal {
+  font-variation-settings: normal;
+}
+
+.font-variation-weight {
+  font-variation-settings: "wght" 400;
+}
+
+.font-variation-width {
+  font-variation-settings: "wdth" 100;
+}
+
+.font-variation-slant {
+  font-variation-settings: "slnt" 0;
+}
+
+.font-variation-italic {
+  font-variation-settings: "ital" 1;
+}
+
+/* ===== FONT OPTICAL SIZING ===== */
+.font-optical-sizing-auto {
+  font-optical-sizing: auto;
+}
+
+.font-optical-sizing-none {
+  font-optical-sizing: none;
+}
+
+/* ===== FONT SIZE ADJUST ===== */
+.font-size-adjust-none {
+  font-size-adjust: none;
+}
+
+.font-size-adjust-from-font {
+  font-size-adjust: from-font;
+}
+
+.font-size-adjust-0_5 {
+  font-size-adjust: 0.5;
+}
+
+.font-size-adjust-0_6 {
+  font-size-adjust: 0.6;
+}
+
+.font-size-adjust-0_7 {
+  font-size-adjust: 0.7;
+}
+
+.font-size-adjust-0_8 {
+  font-size-adjust: 0.8;
+}
+
+.font-size-adjust-0_9 {
+  font-size-adjust: 0.9;
+}
+
+.font-size-adjust-1 {
+  font-size-adjust: 1;
+}
+
+.font-size-adjust-1_1 {
+  font-size-adjust: 1.1;
+}
+
+.font-size-adjust-1_2 {
+  font-size-adjust: 1.2;
+}
+
+.font-size-adjust-1_3 {
+  font-size-adjust: 1.3;
+}
+
+.font-size-adjust-1_4 {
+  font-size-adjust: 1.4;
+}
+
+.font-size-adjust-1_5 {
+  font-size-adjust: 1.5;
+}
+
+/* ===== FONT STRETCH ===== */
+.font-stretch-ultra-condensed {
+  font-stretch: ultra-condensed;
+}
+
+.font-stretch-extra-condensed {
+  font-stretch: extra-condensed;
+}
+
+.font-stretch-condensed {
+  font-stretch: condensed;
+}
+
+.font-stretch-semi-condensed {
+  font-stretch: semi-condensed;
+}
+
+.font-stretch-normal {
+  font-stretch: normal;
+}
+
+.font-stretch-semi-expanded {
+  font-stretch: semi-expanded;
+}
+
+.font-stretch-expanded {
+  font-stretch: expanded;
+}
+
+.font-stretch-extra-expanded {
+  font-stretch: extra-expanded;
+}
+
+.font-stretch-ultra-expanded {
+  font-stretch: ultra-expanded;
+}
+
+/* ===== FONT STYLE ===== */
+.font-style-normal {
+  font-style: normal;
+}
+
+.font-style-italic {
+  font-style: italic;
+}
+
+.font-style-oblique {
+  font-style: oblique;
+}
+
+/* ===== FONT VARIANT ===== */
+.font-variant-normal {
+  font-variant: normal;
+}
+
+.font-variant-small-caps {
+  font-variant: small-caps;
+}
+
+.font-variant-all-small-caps {
+  font-variant: all-small-caps;
+}
+
+.font-variant-petite-caps {
+  font-variant: petite-caps;
+}
+
+.font-variant-all-petite-caps {
+  font-variant: all-petite-caps;
+}
+
+.font-variant-unicase {
+  font-variant: unicase;
+}
+
+.font-variant-titling-caps {
+  font-variant: titling-caps;
+}
+
+.font-variant-lining-nums {
+  font-variant-numeric: lining-nums;
+}
+
+.font-variant-oldstyle-nums {
+  font-variant-numeric: oldstyle-nums;
+}
+
+.font-variant-proportional-nums {
+  font-variant-numeric: proportional-nums;
+}
+
+.font-variant-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-variant-diagonal-fractions {
+  font-variant-numeric: diagonal-fractions;
+}
+
+.font-variant-stacked-fractions {
+  font-variant-numeric: stacked-fractions;
+}
+
+.font-variant-ordinal {
+  font-variant-numeric: ordinal;
+}
+
+.font-variant-slashed-zero {
+  font-variant-numeric: slashed-zero;
+}
+
+.font-variant-jis78 {
+  font-variant-east-asian: jis78;
+}
+
+.font-variant-jis83 {
+  font-variant-east-asian: jis83;
+}
+
+.font-variant-jis90 {
+  font-variant-east-asian: jis90;
+}
+
+.font-variant-jis04 {
+  font-variant-east-asian: jis04;
+}
+
+.font-variant-simplified {
+  font-variant-east-asian: simplified;
+}
+
+.font-variant-traditional {
+  font-variant-east-asian: traditional;
+}
+
+.font-variant-full-width {
+  font-variant-east-asian: full-width;
+}
+
+.font-variant-proportional-width {
+  font-variant-east-asian: proportional-width;
+}
+
+.font-variant-ruby {
+  font-variant-east-asian: ruby;
+}
+
+/* ===== FONT KERNING ===== */
+.font-kerning-auto {
+  font-kerning: auto;
+}
+
+.font-kerning-normal {
+  font-kerning: normal;
+}
+
+.font-kerning-none {
+  font-kerning: none;
+}
+
+/* ===== FONT LANGUAGE OVERRIDE ===== */
+.font-language-override-normal {
+  font-language-override: normal;
+}
+
+/* ===== FONT SYNTHESIS ===== */
+.font-synthesis-weight {
+  font-synthesis: weight;
+}
+
+.font-synthesis-style {
+  font-synthesis: style;
+}
+
+.font-synthesis-small-caps {
+  font-synthesis: small-caps;
+}
+
+.font-synthesis-none {
+  font-synthesis: none;
+}
+
+.font-synthesis-all {
+  font-synthesis: weight style small-caps;
+}
+
+/* ===== FONT RENDERING ===== */
+.font-rendering-auto {
+  font-rendering: auto;
+}
+
+.font-rendering-optimizeSpeed {
+  font-rendering: optimizeSpeed;
+}
+
+.font-rendering-optimizeLegibility {
+  font-rendering: optimizeLegibility;
+}
+
+.font-rendering-geometricPrecision {
+  font-rendering: geometricPrecision;
+}
+
+/* ===== TEXT RENDERING ===== */
+.text-rendering-auto {
+  text-rendering: auto;
+}
+
+.text-rendering-optimizeSpeed {
+  text-rendering: optimizeSpeed;
+}
+
+.text-rendering-optimizeLegibility {
+  text-rendering: optimizeLegibility;
+}
+
+.text-rendering-geometricPrecision {
+  text-rendering: geometricPrecision;
+}
+
+/* ===== IMAGE RENDERING ===== */
+.image-rendering-auto {
+  image-rendering: auto;
+}
+
+.image-rendering-crisp-edges {
+  image-rendering: crisp-edges;
+}
+
+.image-rendering-pixelated {
+  image-rendering: pixelated;
+}
+
+/* ===== SHAPE RENDERING ===== */
+.shape-rendering-auto {
+  shape-rendering: auto;
+}
+
+.shape-rendering-optimizeSpeed {
+  shape-rendering: optimizeSpeed;
+}
+
+.shape-rendering-crispEdges {
+  shape-rendering: crispEdges;
+}
+
+.shape-rendering-geometricPrecision {
+  shape-rendering: geometricPrecision;
+}
+
+/* ===== COLOR RENDERING ===== */
+.color-rendering-auto {
+  color-rendering: auto;
+}
+
+.color-rendering-optimizeSpeed {
+  color-rendering: optimizeSpeed;
+}
+
+.color-rendering-optimizeQuality {
+  color-rendering: optimizeQuality;
+}
+
+/* ===== TEXT REPLACEMENT ===== */
+.text-replacement {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ===== FINAL UTILITY ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS MANAGEMENT ===== */
+.focus\:sr-only:focus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .print\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .high-contrast\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .reduce-motion\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ===== TOUCH DEVICE ===== */
+@media (hover: none) and (pointer: coarse) {
+  .touch\:sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ===== DARK THEME ===== */
+[data-theme="dark"] .dark\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS VISIBLE ===== */
+.focus-visible\:sr-only:focus-visible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== GROUP HOVER ===== */
+.group:hover .group-hover\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PEER HOVER ===== */
+.peer:hover ~ .peer-hover\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== CHECKED STATE ===== */
+.checked\:sr-only:checked {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== SELECTED STATE ===== */
+.selected\:sr-only[aria-selected="true"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== EXPANDED STATE ===== */
+.expanded\:sr-only[aria-expanded="true"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PRESSED STATE ===== */
+.pressed\:sr-only[aria-pressed="true"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== CURRENT PAGE ===== */
+.current\:sr-only[aria-current="page"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== VISIBLE STATE ===== */
+.visible\:sr-only[aria-visible="true"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== HIDDEN STATE ===== */
+.hidden\:sr-only[aria-hidden="true"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== DISABLED STATE ===== */
+.disabled\:sr-only:disabled {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== READONLY STATE ===== */
+.readonly\:sr-only[readonly] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== REQUIRED STATE ===== */
+.required\:sr-only:required {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== VALID STATE ===== */
+.valid\:sr-only:valid {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== INVALID STATE ===== */
+.invalid\:sr-only:invalid {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS WITHIN ===== */
+.focus-within\:sr-only:focus-within {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== HOVER FOCUS ===== */
+.hover\:focus\:sr-only:hover:focus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== ACTIVE FOCUS ===== */
+.active\:focus\:sr-only:active:focus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS VISIBLE WITHIN ===== */
+.focus-visible-within\:sr-only:focus-visible-within {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== GROUP FOCUS ===== */
+.group:focus .group-focus\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PEER FOCUS ===== */
+.peer:focus ~ .peer-focus\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS WITHIN GROUP ===== */
+.group:focus-within .group-focus-within\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PEER FOCUS WITHIN ===== */
+.peer:focus-within ~ .peer-focus-within\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FOCUS VISIBLE GROUP ===== */
+.group:focus-visible .group-focus-visible\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== PEER FOCUS VISIBLE ===== */
+.peer:focus-visible ~ .peer-focus-visible\:sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== FINAL UTILITY CLASS ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
